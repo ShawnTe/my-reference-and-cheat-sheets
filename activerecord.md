@@ -30,16 +30,15 @@
 - #rename_column :table, :old-header, :new-header
 - #create [{name: "Jayda", age: 3}, {name: "Spot", age: 4}] => #new + #save & returns dog with id or nil if fail
 - #new
-- #save     => returns true/false
+- #save => returns true/false
 - #column_names => same as just Dog
-
 - #belongs_to
 - #has_many
-    ex. Class Dog < ActiveRecord::Base
-          belongs_to :owner {class_name: "Person"}
-          has_many :ratings
-          has_many :doctors, through :appointments  => not directly connected to doctors
-        end
+    Class Dog < ActiveRecord::Base
+      belongs_to :owner {class_name: "Person"}
+      has_many :ratings
+      has_many :doctors, through :appointments  => not directly connected to doctors
+    end
 
 
 ### Dog 1 should always receive cuteness score of 10.
