@@ -1,3 +1,5 @@
+[Ruby on Rails Guide](https://guides.rubyonrails.org) -- activerecord  relations   
+[RoR more detailed](https://api.rubyonrails.org/)
 
 # Instance methods
 - .where(name: "Jayda")
