@@ -8,7 +8,7 @@
 #### makes available:
 - #build_dog (doesn't persist)
 - #create_dog (persists)
-- #create_dog!  (ex. rating.create_dog)
+- #create_dog\!  (ex. rating.create_dog)
 
 - expects to 1. find class Dog, and 2. a dog_id in Ratings
 

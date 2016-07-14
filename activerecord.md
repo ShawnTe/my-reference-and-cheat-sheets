@@ -4,7 +4,7 @@ gem open ___ activerecord  ('open' not working on my pea brain)
 
 - [Rake commands](rake-commands.md)
 - [Active Record Associations](active-record-associations.md)
-- [RESTful CRUD](crud-restful)
+- [RESTful CRUD](crud-restful.md)
 
 ## Naming Conventions
 - Class names are singular CamelCase
@@ -27,6 +27,7 @@ gem open ___ activerecord  ('open' not working on my pea brain)
 
       end
     end
+### [Validations](http://edgeguides.rubyonrails.org/active_record_validations.html)
 
 ## Instance methods
 - #where(name: "Jayda")
