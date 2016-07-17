@@ -3,7 +3,7 @@
 ### belongs_to
     class Rating
       belongs_to :dog, { :class_name => "Dog", :foreign_key => :dog_id }
-      belongs_to :owner, class_name: "Person"
+      belongs_to :owner, class_name: "Person"   ==> if table name diff than belongs_to
     end
 #### makes available:
 - #build_dog (doesn't persist)
