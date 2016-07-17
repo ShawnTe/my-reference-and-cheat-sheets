@@ -36,7 +36,7 @@ gem open ___ activerecord  ('open' not working on my pea brain)
 - #order(dog: :asc)     => (table, {})
 - #limit(3)
 - #pluck(:name, :age)   => attributes
-- #first(2)           => args optional
+- #first(2)           => args optional, i.e. how many 
 - #find(1)            => index #
 - #find [1,3]  or .find(1,3)
 - #find_by(name: "Jayda").age      => returns age
@@ -70,5 +70,6 @@ __Judge 2 rated Dog 2 but the cutemenss and coolness scores were reversed__
 ### Passwords
   - has_secure_password  (api_rubyonrails.org)
     looks for t.string :password_digest
+
 
 

@@ -5,9 +5,9 @@
 ### Flow
 - gem install bundler (should be one time thing in workspace)
 - bundle install  (if [issue with Ruby version](ruby-env.md))
+- generate:model NAME=Student   (uppercase, singular)  (only have to do once i.e. if drop)
+- generate:migration NAME=create_students   (only have to create once)
 - be db:create
-- (generate:model NAME=Student)   (uppercase, singular)  (only have to do once i.e. if drop)
-- (generate:migration NAME=create_students)   (only have to create once)
 - be db:migrate        (ref [active record associations](active-record-associations.md))
 - be db:seed
 
@@ -15,3 +15,5 @@
 - be spec
 - be console
 
+
+be rake -T
