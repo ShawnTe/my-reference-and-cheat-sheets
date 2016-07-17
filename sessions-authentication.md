@@ -17,7 +17,7 @@ in html form:
 
 ##### routes
 
-  post '/register' do
+ ` post '/register' do
     if params[:password1] == params[:password2]
       user = User.create(username: params[:username],  password: params[:password1])
       if user
@@ -27,7 +27,7 @@ in html form:
         @error = "Passwords don't match"
         erb :new
       end
-    end
+    end `
 
 ##### helpers/session_helpers.rb 
 - create helper method, then can call it simply as logged_in?
