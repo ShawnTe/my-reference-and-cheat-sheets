@@ -71,6 +71,7 @@ obj.funct()
 
 ## Class
 #### Must enter in all arguments, in order!
+
 car Person = function(firstName, lastName, gender){
   this.firstName = firstName,
   this.lastName = lastName,
@@ -84,6 +85,7 @@ bruce.defineThis
 // Person {properties, defineThis: Person} ==> Node + Chrome Dev tools may handle this diff. maybe ignore function
 
 ### *to redefine class -- update all instances!!!!!!!*:
+
 Person.prototype.greeting = function(name){
   return 'Hello' + ' name' + '.'
 };
