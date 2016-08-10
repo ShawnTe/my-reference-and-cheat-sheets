@@ -9,7 +9,7 @@ enable sessions (syntax??)
 
 ## Model
 (go to bcrypt gem docs)
-include BCrypt
+include BCrypt   // in model
 
 
 def password

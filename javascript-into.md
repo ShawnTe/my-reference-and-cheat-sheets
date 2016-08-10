@@ -1,12 +1,8 @@
 July 16
 
-## diffs from Ruby
-0 is falsey in JS (not in Ruby)
-NoN is falsey
 irb console for Ruby is as node console for JS
 [1,2].push(4)
 --> 3 (push returns the length)
-must return (no inherent last expression = return)
 
 ## declare variables
 if you know what type a variable should be, state it
@@ -39,7 +35,7 @@ same as var y = function(num){
   return num + num
 };
 
-## Objects
+## Object literal
 var batMan = {
   firstName: 'Bruce',
   lastName: 'Wayne',
@@ -72,7 +68,7 @@ obj.funct()
 ## Class
 #### Must enter in all arguments, in order!
 
-car Person = function(firstName, lastName, gender){
+var Person = function(firstName, lastName, gender){
   this.firstName = firstName,
   this.lastName = lastName,
   this.gender = gender

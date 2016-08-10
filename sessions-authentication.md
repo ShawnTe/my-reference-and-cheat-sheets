@@ -2,10 +2,12 @@
 i.e. retain state across web requests (i.e. logged in)
 
 Session info in Sinatra: http://www.sinatrarb.com/intro#Using%20Sessions
+[Jaclyn's example -- complete set up](https://gist.github.com/jkarnowski/9ce4e17ccf4a427272d3a521ae95acb9)
 
-- enable sessions in enviro file
+- enable sessions in enviro file or config.ru
 - controllers/sessions_controller.rb
 - put all restful views in folder for that table
+- sessions_ helper
 
 - in LAYOUT
 log in / log out button depending on whether in session or not
@@ -15,9 +17,46 @@ in html form:
 <input type="password" name="password1">
 <input type="password" name="password2"> to confirm password
 
-##### routes
+##### controller
 
- ` post '/register' do
+# sessions NEW
+get '/sessions/new' do
+
+end
+
+# sessions CREATE
+post '/sessions' do 
+  @user = User.find_by_email(params[:email])
+  if @user && @user.authenticate
+    session[:id] = @user.id
+    redirect "/users/#{@user.id}"
+  else
+    @errors = ["Login not legit, try again"]
+    erb :'/users/show'
+  end
+end
+```
+```
+(in the model)
+def authenticate(input_password)
+  @user.password == input_password
+end
+```
+```
+# sessions DELETE
+delete '/sessions/:id' do 
+  session[:id] = nil
+  redirect '/'
+end
+  
+if they have a session id, then they are logged in, if not session id, then no
+
+It's just a hash look up: Sinatra sessions for more info on cookies and setting the settings.
+```
+
+
+from previous session -- Hunter doesn't user register, Shmba does
+   post '/register' do
     if params[:password1] == params[:password2]
       user = User.create(username: params[:username],  password: params[:password1])
       if user
@@ -70,8 +109,3 @@ in html form:
   4. u.save
 
 
-## Validations
-  - dog.valid?
-  - dog.errors.messages
-  - dog.errors[:email]
-  - dog.errors.messages.any?

@@ -1,3 +1,5 @@
+[cheatsheet-oscarotero](https://oscarotero.com/jquery/)
+
     <script src="jquery.min.js"></script>
 
 $("#destinations > li")   parent > child (and only direct child)
