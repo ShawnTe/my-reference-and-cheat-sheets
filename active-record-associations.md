@@ -6,28 +6,28 @@
 2. the foreign key in belongs_to is association-name_id
 
 Options --  :source, :foreign_key, :class_name, :as (alias)
-:source  (singular, lowercase -- refers to the association)
-Q: What model are we pointing to?
-Q: What foreign key are we pointing to?
+:source  (singular, lowercase -- refers to the association)  
+Q: What model are we pointing to?  
+Q: What foreign key are we pointing to?  
 
-thus:
-Class Post <ActiveRecord::Base
-  belongs_to :author, class_name: :User      <== will look for author_id in Posts table
+thus:  
+Class Post <ActiveRecord::Base  
+  belongs_to :author, class_name: :User      <== will look for author_id in Posts table  
 end
 
-for User.first.authored_posts:
-"find the foreign key in authored_posts called author_id, 
-which actually references Post class and a table by that name, 
-and call this method authored_posts"
+for User.first.authored_posts:  
+"find the foreign key in authored_posts called author_id,  
+which actually references Post class and a table by that name,  
+and call this method authored_posts"  
 
-Class User
-  has_many :authored_posts, foreign_key: :author_id, class_name: :Post
+Class User  
+  has_many :authored_posts, foreign_key: :author_id, class_name: :Post  
 end
 
-class Post
-  has_many :post_authorings, foreign_key: authored_post_id
-  has_many :authors, through: :post_authorings, source: :post_author
-  belongs_to :editor, class_name: User
+class Post  
+  has_many :post_authorings, foreign_key: authored_post_id  
+  has_many :authors, through: :post_authorings, source: :post_author  
+  belongs_to :editor, class_name: User  
 end
 
 Post.first.authors:
