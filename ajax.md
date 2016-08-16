@@ -17,6 +17,8 @@ function createNote(){
 
     event.preventDefault();
     var formData = $('submit-note').serialize()
+    // example: var url =  $(this).children().attr("action/href");
+    
     $.ajax({
       url: "/posts",
       method: "POST"
@@ -26,11 +28,12 @@ function createNote(){
         $('#new-horse').parent().show();
 
         if (serverResponse.name != null){ 
-      // blink border of input green
-      // if on show all by tag page, ajax insert new li, chron desc
-      $(".tagged-list").append("serverResponse.title");  
-      $("#added-horse").attr("href", "/horses/" + serverResponse.id)    (to change the attr to modifies if there, adds if not getter and setter)
-} else {
+              // blink border of input green
+              // if on show all by tag page, ajax insert new li, chron desc
+        $(".tagged-list").append("serverResponse.title");  
+             // (to change the attr to modifies if there, adds if not getter and setter)
+        $("#added-horse").attr("href", "/horses/" + serverResponse.id)    
+        } else {
       alert(serverResponse.error);
     }
     })
