@@ -1,4 +1,25 @@
-July 16
+
+
+```` javascript
+$(document).ready(function(){
+
+  draggableBoxes();
+  resizableBoxes();
+  showNewTodoForm();
+  $("#btn-structure").on('click', function() {
+    showTodoLists();
+  });
+});
+
+var draggableBoxes = function(){
+  $(".box").draggable({
+    axis: "y",
+    containment: "parent",
+    grid: [0, 15],
+    opacity: 0.5
+  });
+};
+````
 
 irb console for Ruby is as node console for JS
 [1,2].push(4)
