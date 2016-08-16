@@ -1,4 +1,4 @@
-
+also see [Hunter's ajax mini-tutorial](https://github.com/ShawnTe/jQueryIntro)
 
 ## check that jquery library being called from layout page
 ````
