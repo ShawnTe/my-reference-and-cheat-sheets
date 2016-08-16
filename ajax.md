@@ -16,8 +16,10 @@ function createNote(){
     console.log($(this));
 
     event.preventDefault();
+      // jquery selector = form
     var formData = $('submit-note').serialize()
-    // example: var url =  $(this).children().attr("action/href");
+     // example: 
+    var url =  $(this).children().attr("action/href");
     
     $.ajax({
       url: "/posts",
