@@ -27,14 +27,16 @@ function createNote(){
       data: formData
     }).done(function(serverResponse){
       console.log(serverResponse);
+      var thingy = JSON.parse(serverResponse);
+      
         $('#new-horse').parent().show();
 
         if (serverResponse.name != null){ 
               // blink border of input green
               // if on show all by tag page, ajax insert new li, chron desc
-        $(".tagged-list").append("serverResponse.title");  
+        $(".tagged-list").append("thingy.title");  
              // (to change the attr to modifies if there, adds if not getter and setter)
-        $("#added-horse").attr("href", "/horses/" + serverResponse.id)    
+        $("#added-horse").attr("href", "/horses/" + thingy.id)    
         } else {
       alert(serverResponse.error);
     }
