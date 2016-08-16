@@ -20,7 +20,20 @@ var draggableBoxes = function(){
   });
 };
 ````
+## Event Delegation
+Hunter: Translation - Make this your DEFAULT pattern.
+````
+var static = $('some-static-parent-element');
 
+var delegatedEventListener = function(){
+  $(static).on('click', '.some_dynamic_class', function(event){
+    event.preventDefault();
+    console.log(event);
+    console.log(this);
+    doSomethingFunction();
+  })
+};
+````
 irb console for Ruby is as node console for JS
 [1,2].push(4)
 --> 3 (push returns the length)
