@@ -1,8 +1,9 @@
 
 
 ## check that jquery library being called from layout page
-
-## and <script>application.js</script>
+````
+<script>application.js</script>
+````
 
 ## Controller
 
