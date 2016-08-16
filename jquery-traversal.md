@@ -16,3 +16,6 @@ $("li").first().next();
 .parent();  
 .children("li");    child descendants that are li  
  $("#vacations").children("li").last();  
+   
+ $('li.student img').first().attr('src', 'replace with new jpg file')       
+
