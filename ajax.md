@@ -2,12 +2,44 @@
 
 ## check that jquery library being called from layout page
 
-## and <script>application.js
-
-## application.js
+## and <script>application.js</script>
 
 ## Controller
 
+## application.js
+
+````
+function createNote(){
+  $("submit-note").on('submit', function(event) {
+    console.log(event);
+    console.log($(this));
+
+    event.preventDefault();
+    var formData = $('submit-note').serialize()
+    $.ajax({
+      url: "/posts",
+      method: "POST"
+      data: formData
+    }).done(function(serverResponse){
+      console.log(serverResponse);
+        $('#new-horse').parent().show();
+
+        if (serverResponse.name != null){ 
+      // blink border of input green
+      // if on show all by tag page, ajax insert new li, chron desc
+      $(".tagged-list").append("serverResponse.title");  
+      $("#added-horse").attr("href", "/horses/" + serverResponse.id)    (to change the attr to modifies if there, adds if not getter and setter)
+} else {
+      alert(serverResponse.error);
+    }
+    })
+
+  })
+}
+````
+.fail is defined by status code  
+
+````
 json object format
   [
     {
@@ -23,3 +55,4 @@ json object format
       "date": "Aug 6"
     }
   ]
+````
