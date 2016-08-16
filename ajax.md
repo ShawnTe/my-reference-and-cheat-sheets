@@ -6,7 +6,23 @@ also see [Hunter's ajax mini-tutorial](https://github.com/ShawnTe/jQueryIntro)
 ````
 
 ## Controller
-
+```````
+# Create new todos
+post '/todos' do
+  todo = Todo.new(params[:todo])
+  todo.brainjuice_id = bj_id
+  if todo.save
+    if request.xhr?
+      todo.to_json
+    else
+      redirect '/todos'
+    end
+  else
+    @errors = todo.errors.full_messages
+    redirect '/todos'
+  end
+end
+````
 ## application.js
 
 ````
