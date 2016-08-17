@@ -1,5 +1,12 @@
+
 ```` 
 $(document).ready(function(){
+ 
+  // same as:
+$(function(){
+
+});  // simple!!
+
 
   draggableBoxes();
   resizableBoxes();
@@ -132,7 +139,10 @@ function createNote(){
 }
 .fail is defined by status code
 
-
+#### Reset needs the [0] when calling it on the form
+```
+    $("#post_form")[0].reset();
+```
 // in routes
 get '/note do' 
   erb :'_new-post'   (what is this route called?)
