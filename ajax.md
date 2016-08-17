@@ -80,3 +80,18 @@ json object format
     }
   ]
 ````
+ajax is part of jQuery  
+so when using ajax, need to require jQuery library  
+
+$.ajax({  
+  url: '/newAccount',  
+  method: 'POST'                  ==> if other than GET  
+  data: {name: 'Alfred', password: 'slkdfj'},  
+  dataType: 'JSON'  or 'html'     ==> what data I'm expecting back, can be blank  
+<!-- }).done( this is what happens after call made ) -->  
+}).done(function(response){  
+  $('body').append(response)  
+  console.log('request successful')  
+}).fail(function(response){  
+  console.log(response)  
+});  
