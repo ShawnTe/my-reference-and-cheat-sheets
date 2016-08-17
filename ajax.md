@@ -2,6 +2,8 @@ also see [Hunter's ajax mini-tutorial](https://github.com/ShawnTe/jQueryIntro)
 
 ## check that jquery library being called from layout page
 ````
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>  
+<script src="jquery-1.12.4.min.js"></script>  
 <script>application.js</script>
 ````
 
