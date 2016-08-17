@@ -28,27 +28,6 @@ From [article](http://code.tutsplus.com/tutorials/singing-with-sinatra-the-recal
   <p>Note not found.</p>
 <% end %>
 ```
-
-#### delete
-```
-get '/:id/delete' do
-  @note = Note.get params[:id]
-  @title = "Confirm deletion of note ##{params[:id]}"
-  erb :delete
-end
-```
-```
-<% if @note %>
-  <p>Are you sure you want to delete the following note: <em>"<%= @note.content %>"</em>?</p>
-  <form action="/<%= @note.id %>" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Yes, Delete It!">
-    <a href="/<%= @note.id %>">Cancel</a>
-  </form>
-<% else %>
-  <p>Note not found.</p>
-<% end %>
-```
 #### Update a todo 
 ````
 put '/todos/:id' do  
@@ -73,7 +52,26 @@ put '/users/:id' do
   redirect "/users/#{@user.id}"  
 end  
 ````
-
+#### delete
+```
+get '/:id/delete' do
+  @note = Note.get params[:id]
+  @title = "Confirm deletion of note ##{params[:id]}"
+  erb :delete
+end
+```
+```
+<% if @note %>
+  <p>Are you sure you want to delete the following note: <em>"<%= @note.content %>"</em>?</p>
+  <form action="/<%= @note.id %>" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Yes, Delete It!">
+    <a href="/<%= @note.id %>">Cancel</a>
+  </form>
+<% else %>
+  <p>Note not found.</p>
+<% end %>
+```
 ```
 delete '/:id' do
   n = User.get params[:id]
