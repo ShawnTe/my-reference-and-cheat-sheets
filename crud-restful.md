@@ -49,9 +49,8 @@ end
   <p>Note not found.</p>
 <% end %>
 ```
+#### Update a todo 
 ````
-
-### Update a todo  
 put '/todos/:id' do  
   todo = Todo.find(params[:id])  
   new_note = params["notes"]  
