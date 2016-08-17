@@ -70,13 +70,13 @@ same as var y = function(num){
 };
 
 ## Object literal
-var batMan = {
-  firstName: 'Bruce',
-  lastName: 'Wayne',
-  greeting: function (name){
-  return 'Hello' + name + '.'
-  }
-}
+var batMan = {  
+  firstName: 'Bruce',  
+  lastName: 'Wayne',  
+  greeting: function (name){  
+  return 'Hello' + name + '.'  
+  }  
+}  
 ##### to add more properties
 batMan.car = 'Bat mobile';
   or
