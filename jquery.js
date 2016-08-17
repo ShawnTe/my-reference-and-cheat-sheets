@@ -1,3 +1,37 @@
+```` 
+$(document).ready(function(){
+
+  draggableBoxes();
+  resizableBoxes();
+  showNewTodoForm();
+  $("#btn-structure").on('click', function() {
+    showTodoLists();
+  });
+});
+
+var draggableBoxes = function(){
+  $(".box").draggable({
+    axis: "y",
+    containment: "parent",
+    grid: [0, 15],
+    opacity: 0.5
+  });
+};
+````
+## Event Delegation
+Hunter: Translation - Make this your DEFAULT pattern.
+````
+var static = $('some-static-parent-element');
+
+var delegatedEventListener = function(){
+  $(static).on('click', '.some_dynamic_class', function(event){
+    event.preventDefault();
+    console.log(event);
+    console.log(this);
+    doSomethingFunction();
+  })
+};
+````
 $(document).ready(function() {
 
 });
