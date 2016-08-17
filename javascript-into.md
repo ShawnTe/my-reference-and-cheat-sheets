@@ -71,8 +71,7 @@ obj.funct()
 //Object {funct: FUNCTION, variable: 'x'}  
 
 
-## Class
-#### Must enter in all arguments, in order!
+## Object Constructor
 
 var Person = function(firstName, lastName, gender){  
   this.firstName = firstName,  
@@ -81,16 +80,28 @@ var Person = function(firstName, lastName, gender){
   this.defineThis = this  
 }  
 
+or
+
+var Person = function(args) {
+  this.firstName = firstName,  
+  this.lastName = lastName,  
+  this.gender = gender  
+  this.defineThis = this 
+}
+
+var joe = new Person({firstName: "Joe", lastName: "Miller"})
+oreo = new Cookie({type: "Oreo", remainingBakeTime: 0});
+
+### Prototype
+Person.prototype.greeting = function(name){  
+  return 'Hello' + ' name' + '.'  
+};  
+
+#### Misc
 var bruce = new Person('Bruce', 'Wayne', 'M');  
 
 bruce.defineThis  
 // Person {properties, defineThis: Person} ==> Node + Chrome Dev tools may handle this diff. maybe ignore function  
-
-### *to redefine class -- update all instances!!!!!!!*:
-
-Person.prototype.greeting = function(name){  
-  return 'Hello' + ' name' + '.'  
-};  
 
 
 
