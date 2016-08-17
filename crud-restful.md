@@ -49,12 +49,31 @@ end
   <p>Note not found.</p>
 <% end %>
 ```
+````
 
-put '/users/:id' do
-  @user = User.find(params[:id])
-  @user.update(params[:user])
-  redirect "/users/#{@user.id}"
-end
+### Update a todo  
+put '/todos/:id' do  
+  todo = Todo.find(params[:id])  
+  new_note = params["notes"]  
+  if params["completed"]  
+    todo.update(completed: true)  
+  end  
+  todo.update(notes: new_note)  
+  
+  if request.xhr?  
+    todo.to_json  
+  else  
+    redirect "/todos"  
+  end  
+end  
+````
+````
+put '/users/:id' do  
+  @user = User.find(params[:id])  
+  @user.update(params[:user])  
+  redirect "/users/#{@user.id}"  
+end  
+````
 
 ```
 delete '/:id' do
