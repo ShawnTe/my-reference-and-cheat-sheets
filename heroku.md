@@ -6,14 +6,14 @@ heroku login
 ### deploy
 git push heroku master
 
-### git push the development branch as if it were master
+### run once:
+heroku run rake db:migrate
+
+##### git push the development branch as if it were master
 git push heroku development:master
 
 ### to open app online from CLI
 heroku open
-
-### may need to run:
-heroku run rake db:migrate (and maybe db:seed)
 
 ### to see console errors:
 heroku logs
