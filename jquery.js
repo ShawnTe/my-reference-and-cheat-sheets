@@ -93,8 +93,9 @@ request.done(function(responseData){
 <div id="note-container">
 </div>
 
+## Dynamic event listener, add additional listner after click
 function showNoteBox () { 
-  $("#toggle-note").on('click', function(event) {
+  $("#toggle-note").on('click', ".list-item", function(event) {
   event.preventDefault();
   console.log($(this));
   $.ajax ({
