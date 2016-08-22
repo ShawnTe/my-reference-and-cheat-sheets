@@ -1,0 +1,22 @@
+## Ways to call a function and THIS
+
+1. f() // This is set to window UNLESS "use strict" i.e. this must be explicitly defined or it's undefined. If you don't set a variable, it's an attribute of window
+
+2. o = {              // o is the object of the function
+    x: f,
+    y: 123
+}
+o.f()
+
+3. function_name.call('insert this here!!')     // The 1st parameter that you pass to .call() or .apply()                                         // -- will be window if undefined. 
+    function_name.apply                          // f.call(this, arg, arg, arg)
+                                                    f.apply(this, [a, b, c]) look it up
+4. a = new f        // this is a (new object)
+
+
+concept
+syntax
+judgment
+
+microjs.com -- to read code. pick the stars
+objectplayground.com

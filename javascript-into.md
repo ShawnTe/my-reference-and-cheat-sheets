@@ -4,6 +4,8 @@ irb console for Ruby is as node console for JS
 [1,2].push(4)
 --> 3 (push returns the length)
 
+console.error (instead of console.log )
+
 ## declare variables
 if you know what type a variable should be, state it
   var adfdf = 0

@@ -17,12 +17,12 @@ he dropped the code in an rb file and ran it. Modified it. It worked.
 
 ## Muy importante to do this first so don't accidentally publish key
 
-create file: .gitignore
+### create file: .gitignore
 then add to it: 
 .env
 
 
-Create .env and add to it:
+### Create .env and add to it:
 .env
 APP_ID='long-key-here'
 SECRET_ID='long-key-here'
@@ -31,8 +31,11 @@ SECRET_ID='long-key-here'
 added gem 'unsplash'  (to gem file)
 bundle
 
-dotenv is a gem
-require in enviro
+### dotenv is a gem
+gem "dotenv"
+
+### require in enviro
+require "dotenv"
 
 environment
 
