@@ -22,9 +22,6 @@ Optionally, in package.json:
 2.
   remove jade -->
 
-
-
-
 <!-- CLI
 > npm install pug   (might not be in right order -- should be ok??)
 > npm install pug-cli -g    (necessary?)
