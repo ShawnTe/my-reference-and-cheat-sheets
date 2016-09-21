@@ -1,3 +1,44 @@
+
+```` 
+$(document).ready(function(){
+ 
+  // same as:
+$(function(){
+
+});  // simple!!
+
+
+  draggableBoxes();
+  resizableBoxes();
+  showNewTodoForm();
+  $("#btn-structure").on('click', function() {
+    showTodoLists();
+  });
+});
+
+var draggableBoxes = function(){
+  $(".box").draggable({
+    axis: "y",
+    containment: "parent",
+    grid: [0, 15],
+    opacity: 0.5
+  });
+};
+````
+## Event Delegation
+Hunter: Translation - Make this your DEFAULT pattern.
+````
+var static = $('some-static-parent-element');
+
+var delegatedEventListener = function(){
+  $(static).on('click', '.some_dynamic_class', function(event){
+    event.preventDefault();
+    console.log(event);
+    console.log(this);
+    doSomethingFunction();
+  })
+};
+````
 $(document).ready(function() {
 
 });
@@ -52,8 +93,9 @@ request.done(function(responseData){
 <div id="note-container">
 </div>
 
+## Dynamic event listener, add additional listner after click
 function showNoteBox () { 
-  $("#toggle-note").on('click', function(event) {
+  $("#toggle-note").on('click', ".list-item", function(event) {
   event.preventDefault();
   console.log($(this));
   $.ajax ({
@@ -98,7 +140,10 @@ function createNote(){
 }
 .fail is defined by status code
 
-
+#### Reset needs the [0] when calling it on the form
+```
+    $("#post_form")[0].reset();
+```
 // in routes
 get '/note do' 
   erb :'_new-post'   (what is this route called?)
