@@ -1,0 +1,15 @@
+Virtual Attributes
+- useful for working with legacy databases
+- allows you to work with fields that don't directly map to columns in database
+
+Examples
+- first name, last name  ==> full_name
+- birthdate ==> month, day, year
+- if you have a form and want identical info, like to confirm password or email. Adds _confirmation [2.3 confirmation](http://guides.rubyonrails.org/active_record_validations.html)
+- to check a box confirming that you read something or agree to it
+
+basically, in model
+- define accessor methods: getter and setter methods
+
+- attr_accessor
+- attr_accessible

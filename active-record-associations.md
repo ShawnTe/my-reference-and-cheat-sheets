@@ -1,7 +1,9 @@
 # Active Record Associations
 
 [More form Odin project](http://www.theodinproject.com/ruby-on-rails/active-record-associations )
-#### Assumptions: 
+[poly-morphic project opinions-r-us](https://github.com/ShawnTe/opinions-r-us)
+
+#### Assumptions:
 1. the model's class is based on the name of the association
 2. the foreign key in belongs_to is association-name_id
 
@@ -29,7 +31,7 @@ class Post
     has_many :authors, through: :post_authorings, source: :post_author  
     belongs_to :editor, class_name: User  
 end  
-  
+
 Post.first.authors:  
 Goto the authors association in the Post model.  
 Goto post_authorings association.   

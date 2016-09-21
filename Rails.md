@@ -8,8 +8,10 @@ rails -v
 rails gives lots of options
 
 #### sets up postgres when setting up app
-rails new Thingy --database=postgres -T       (?? should Thingy be lowercase?)  
+* rails new Thingy --database=postgresql -T   
 (may want to uninstall Spring)
+
+* bundle exec rake db:create
 
 can see the log relating to similar commands  
 rake cr  
@@ -25,6 +27,8 @@ how?
 g = generator  
 rails g -T (?)  or  -h // the t prevents tests from building
 
+* rails generate model Members name:string email:string  
+
 ## Rake
 rake db:create  
 rake db:migrate  
@@ -32,15 +36,17 @@ rake -T
 rails console  (instead of rake console)  
 rails s -- or rails server  (instead of shotgun)  
 run rails on localhost:3000  
-rake routes  
+(be) rake routes  
 
 ## Routing
 in config/routes.rb  
-get '/' => 'pages#index'  // where controller = pages and action = index 
+get '/' => 'pages#index'  // where controller = pages and action = index
 ````
 Rails.application.routes.draw do
+  resources :pages, except[:edit, :update]
   get '/' => 'pages#index'
-end 
+  or root to: 'pages#index'
+end
 ````
 then need to create controller
 ````
@@ -55,7 +61,8 @@ and Rails looks for a file called index (the action) in a folder called pages (s
 
 ### Models
 Create:  
-rails generate model Article title:string text:text
+rails generate model Article title:string text:text  
+
 ### CRUD and RESTful routes and Resources
 photos_path           ==> /photos  
 new_photo_path        ==> /photos/new  
@@ -96,12 +103,12 @@ Where f is a form builder object
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
- 
+
   <p>
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
- 
+
   <p>
     <%= f.submit %>
   </p>
