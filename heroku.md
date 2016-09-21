@@ -1,9 +1,9 @@
-## New project 
+## New project
 
-### to login 
+### to login
 heroku login
 
-### need to do before pushing to Heroku: 
+### need to do before pushing to Heroku:
 gem install bundler
     and then
 bundle install
@@ -16,15 +16,11 @@ heroku create book-of-becoming
 ### deploy
 git push heroku master
 
-<<<<<<< HEAD
-#### git push the development branch as if it were master
-=======
 ### run once:
 heroku run rake db:migrate
 
 ##### git push the development branch as if it were master
->>>>>>> 90e2f1c1baf92171afa66369bb35592b7cd6e69f
-git push heroku development:master
+git push heroku development:master  
 
 ### to open app online from CLI
 heroku open
@@ -37,12 +33,7 @@ heroku logs
 [ruby](https://github.com/unsplash/unsplash_rb)
 [js](https://github.com/unsplash/unsplash_js)
 
-
-<<<<<<< HEAD
-=======
-
-### needed to do beforehand (one time?): 
+### needed to do beforehand (one time?):
 gem install bundle
 and then
 bundle install
->>>>>>> 90e2f1c1baf92171afa66369bb35592b7cd6e69f

@@ -1,5 +1,6 @@
 # Jade / Pug
 
+[a handy converter](http://html2jade.aaron-powell.com/)  
 ## Syntax
 - indent by 2 spaces
 

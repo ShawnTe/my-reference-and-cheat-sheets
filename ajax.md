@@ -36,9 +36,9 @@ function createNote(){
     event.preventDefault();
       // jquery selector = form
     var formData = $('submit-note').serialize()
-     // example: 
+     // example:
     var url =  $(this).children().attr("action/href");
-    
+
     $.ajax({
       url: "/posts",
       method: "POST"
@@ -46,10 +46,12 @@ function createNote(){
     }).done(function(serverResponse){
       console.log(serverResponse);
       var thingy = JSON.parse(serverResponse);
-      
-        $('#new-horse').parent().show();
 
-        if (serverResponse.name != null){ 
+        $('#new-horse').parent().show();
+````
+.fail is defined by status code  
+
+        if (serverResponse.name != null){
               // blink border of input green
               // if on show all by tag page, ajax insert new li, chron desc
         $(".tagged-list").append("thingy.title");  
@@ -64,7 +66,6 @@ function createNote(){
 }
 ````
 .fail is defined by status code  
-
 ````
 json object format
   [
@@ -81,7 +82,6 @@ json object format
       "date": "Aug 6"
     }
   ]
-<<<<<<< HEAD
 
 
 In Ruby and returning a .to_json
@@ -101,7 +101,7 @@ $.get($(this).attr("href"), data) ------ .get, pass url and data
 .done(function(response))
 
 we can call response.breed etc
-=======
+
 ````
 ajax is part of jQuery  
 so when using ajax, need to require jQuery library  
@@ -118,4 +118,3 @@ $.ajax({
 }).fail(function(response){  
   console.log(response)  
 });  
->>>>>>> 90e2f1c1baf92171afa66369bb35592b7cd6e69f

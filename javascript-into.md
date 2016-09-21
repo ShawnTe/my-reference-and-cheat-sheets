@@ -1,6 +1,4 @@
 
-
-<<<<<<< HEAD
 console.error (instead of console.log )
 
 ## declare variables
@@ -8,11 +6,12 @@ if you know what type a variable should be, state it
   var adfdf = 0
   var dlskj = ''
   var ldkfj = []
-=======
+
+
 ```` javascript
 $(document).ready(function(){
 
- 
+
 });
 
 
@@ -25,7 +24,6 @@ if you know what type a variable should be, state it
   var adfdf = 0  
   var dlskj = ''  
   var ldkfj = []  
->>>>>>> 90e2f1c1baf92171afa66369bb35592b7cd6e69f
 
 ## declare functions
 var combineName = function(firstName, lastName){  
@@ -39,7 +37,7 @@ var x = (function(){
   return p +++ input  
   }  
 })();  
-  
+
 x('asdf')  ==> this argument is 'input' for function  
 // true  
 x('llmn')  
@@ -67,10 +65,10 @@ batMan.car = {make: 'Batmobile', year: 1966};
 
 batMan.car  
 // (object)  
-  
+
 batMan.car.make  
 // 'Batmobile'  
-  
+
 ### another object dealio
 var obj = {  
   funct: function(){return this},  
@@ -96,7 +94,7 @@ var Person = function(args) {
   this.firstName = firstName,  
   this.lastName = lastName,  
   this.gender = gender  
-  this.defineThis = this 
+  this.defineThis = this
 }
 
 var joe = new Person({firstName: "Joe", lastName: "Miller"})
@@ -112,21 +110,3 @@ var bruce = new Person('Bruce', 'Wayne', 'M');
 
 bruce.defineThis  
 // Person {properties, defineThis: Person} ==> Node + Chrome Dev tools may handle this diff. maybe ignore function  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
