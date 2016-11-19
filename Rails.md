@@ -27,7 +27,6 @@ how?
 g = generator  
 rails g -T (?)  or  -h // the t prevents tests from building
 
-* rails generate model Members name:string email:string  
 
 ## Rake
 rake db:create  
@@ -38,8 +37,14 @@ rails s -- or rails server  (instead of shotgun)
 run rails on localhost:3000  
 (be) rake routes  
 
+### Models
+Create:  
+* rails generate model Member name:string email:string  
+rails generate scaffold Contact name:string address:string
+
 ## Routing
 in config/routes.rb  
+
 get '/' => 'pages#index'  // where controller = pages and action = index
 ````
 Rails.application.routes.draw do
@@ -59,9 +64,6 @@ end
 ````
 and Rails looks for a file called index (the action) in a folder called pages (same as the controller), so: index.html.erb  
 
-### Models
-Create:  
-rails generate model Article title:string text:text  
 
 ### CRUD and RESTful routes and Resources
 photos_path           ==> /photos  
