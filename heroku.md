@@ -1,20 +1,22 @@
 ## New project
 
 ### to login
-heroku login
-
-### need to do before pushing to Heroku:
-gem install bundler
-    and then
-bundle install
-
+heroku login   // username and password  
 
 ### to deploy a new project:
 heroku create book-of-becoming  
 (if you just do heroku create, it will get some random url)
 
+### need to do before pushing to Heroku:  // didn't need to for Hertl's tutorial
+gem install bundler
+ and then
+bundle install
+
 ### deploy
-git push heroku master
+git push heroku (master)    // can omit master after first push
+
+### change name of url
+heroku rename new-name-of-app-here
 
 ### run once:
 heroku run rake db:migrate
