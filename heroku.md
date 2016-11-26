@@ -7,7 +7,7 @@ heroku login   // username and password
 heroku create book-of-becoming  
 (if you just do heroku create, it will get some random url)
 
-### need to do before pushing to Heroku:  // didn't need to for Hertl's tutorial
+### *might need to do before pushing to Heroku:*  // didn't need to for Hertl's tutorial
 gem install bundler
  and then
 bundle install
@@ -19,7 +19,7 @@ git push heroku (master)    // can omit master after first push
 heroku rename new-name-of-app-here
 
 ### run once:
-heroku run rake db:migrate
+heroku run rake/rails db:migrate
 
 ##### git push the development branch as if it were master
 git push heroku development:master  
