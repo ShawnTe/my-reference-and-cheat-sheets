@@ -12,8 +12,9 @@
 - be db:seed
 
 
-- be spec
-- be console
+- be spec      // test
+- be console   // console
+- be shotgun   // server
 
 
 be rake -T

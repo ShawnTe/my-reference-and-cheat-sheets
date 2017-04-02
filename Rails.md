@@ -1,47 +1,60 @@
-Rails
+# Getting started with new Rails app
+````
+$ rails _5.0.0.1_ new hello_app --database=postgresql -T      
+// version optional, -T excludes minitest -- probably don't want to do this if using scaffolding
+````
+**(auto runs bundle install)**
+````
+$ rails db:create
+````
+
+````
+$ rails g scaffold / model etc
+````
+
+````
+$ rails db:migrate
+````
+
+````
+$ rails s
+````
+**in routes**
+````
+root :to => "home#index"
+````
+
 Q: What is: (.:format) when routes are created?  
-gem install rails
-rails -v
 
 ## Short cuts
 * rails s     => server
+* rails s -p 4000n => on port 4000
+* rails s -e production  => in a different environment
 * rails c     => console
-* rails g     => generate
-* rails t     => test
+* rails c --sandbox
+* rails g     => generate => just typing this shows you all options of generate
+* rails g controller  => to see what it expects, i.e. controller ControllerName action1 action2 [options]
+* rails g scaffold Todo task:string brainjuice:references   (sets association)
+* rails t     => test   (only for minitest?)
 * bundle      => bundle install
-rails console --sandbox
 
-## in house testing
+
+### in house testing
 bundle exec guard  
 then hit enter to run  
 
 rails test:integration (links etc in views)  
 rails test:models  
 
-## links
+### links
 * link_to "Name of text or img", "where to link to", hash of options  
 * image_tag("file_name like prayer.png", hash of options) -- auto looks in  app/assets/images/  
 * to include a partial in a page: <%= render 'layouts/header' %>
+* [Form Helpers](http://guides.rubyonrails.org/form_helpers.html)
 
-## Adding Bootstrap:
-add to gemfile: gem 'bootstrap-sass', '3.3.6'  
-bundle install  
-add custom css file: touch app/assets/stylesheets/custom.scss  
-then add bootstrap to that file:
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
-## testing
-* integration tests Hartl 5.32
 
-## Getting started with new app## Simple install
-* **Create new app** can include desired version (auto runs bundle install)
-````
-$ rails _5.0.0.1_ new hello_app --database=postgresql
-````
-
-* **Update gemfile.** Hartl uses specific gem versions because even a point can break things (remember to bundle install again)
-
+## deployment
 * To prepare the system for deployment to production, we run bundle install with a special flag to prevent the local installation of any production gems (which in this case consists of the pg gem). Running install update the gemfile.lock
 ````
 $ bundle install --without production
@@ -72,9 +85,8 @@ rails db:migrate
 rails db:rollback
 ````
 
-* rails s
 
-## Undo
+## Generate and Undo
 Destroy undoes all the commands done by its corresponding command   
 Controllers
 ````
@@ -84,6 +96,7 @@ $ rails destroy  controller StaticPages home help
 Models (more on models below)
 ````
 $ rails generate model User name:string email:string
+$ rails generate model Glass title:string user:references year:date
 $ rails destroy model User
  ````
 Migrations
@@ -92,9 +105,12 @@ $ rails db:migrate
 
 $ rails db:rollback
 ````
-Add an index
+Add an index -- Index a column if likely to search by it  
 ````
-rails generate migration add_index_to_users_email
+rails generate migration add_index_to_users_email  
+rails generate migration add_today_column_to_todo add_column :model, :column_name, :type  
+rails db:rollback  
+
 ````
 then in the migration:
 ````
@@ -106,25 +122,25 @@ To go all the way back to the beginning (or any other Version for that matter), 
 $ rails db:migrate VERSION=0
 ````
 
-#### sets up postgres when setting up app
-* rails new Thingy --database=postgresql -T   
-(may want to uninstall Spring)
 
-* bundle exec rake db:create
 
 can see the log relating to similar commands  
 rake cr  
-bang # of command  
+bang # of command    
 
-consider leaving out coffee, test and what else?  
-how to leave out?  
 
-CSS can set a certain hex to be "light gray", then only type that  
-how?  
+## Adding Bootstrap:
+add to gemfile: gem 'bootstrap-sass', '3.3.6'  
+bundle install  
+add custom css file: touch app/assets/stylesheets/custom.scss  
+then add bootstrap to that file:
+@import "bootstrap-sprockets";
+@import "bootstrap";
 
-g = generator  
-rails g -T (?)  or  -h // the t prevents tests from building
+## testing
+* integration tests Hartl 5.32
 
+* **Update gemfile.** Hartl uses specific gem versions because even a point can break things (remember to bundle install again)
 
 ## Rake
 rake db:create  
@@ -286,3 +302,13 @@ production:
   adapter: postgresql
   statement_limit: 200
 ````
+
+#### toggle
+>> $ rails console --sandbox  
+>> user = User.first  
+>> user.admin?  
+=> false  
+>> user.toggle!(:admin)  
+=> true  
+>> user.admin?  
+=> true  
