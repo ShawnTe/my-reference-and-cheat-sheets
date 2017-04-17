@@ -29,9 +29,6 @@ Basic field types:
 - foreign_key auto makes field required, unless: optional: true  
 - validates :full_name, presence: true  
 
-
-
-
 #### Add Controller request specs (type: :request)
 - rails g controller Todos  
 - (ref. [Scotch tutorial](https://scotch.io/tutorials/build-a-restful-json-api-with-rails-5-part-one))  
