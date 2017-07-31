@@ -16,4 +16,6 @@ end
 ````
 
 run a single feature:  
-cucumber features/feature_name.feature  
+cucumber features/feature_name.feature
+
+save_and_open_page  

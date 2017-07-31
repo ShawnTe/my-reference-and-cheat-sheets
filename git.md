@@ -27,6 +27,13 @@ node app.js         // run file
 git branch -a
 git co dev remotes/origin/development
 
+### Explore commits not merged to master
+To list branches with commits not merged into master:
+git branch --no-merged master
+
+To list the relevant commits:
+git cherry -v master <branch>
+
 ### stash and pop
 git stash
 git pop

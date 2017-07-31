@@ -26,6 +26,8 @@ def complete
   redirect_to @todolist, notice: 'Todo completed'
 end
 ````
+**Also add to set_todo, strict params, AND serializer file (if API!!!!!!!)**   
+
 5. If relevant, make some sort of visual change happen in the view to indicate complete, for ex. change class
 ````
 if todo.completed?
