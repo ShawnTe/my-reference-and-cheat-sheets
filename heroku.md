@@ -3,6 +3,9 @@
 ### to login
 heroku login   // username and password  
 
+###
+make sure using postgresql and not sqlite (gem 'pg')
+
 ### to deploy a new project:
 heroku create book-of-becoming  
 (if you just do heroku create, it will get some random url)
