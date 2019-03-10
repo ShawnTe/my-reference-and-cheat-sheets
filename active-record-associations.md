@@ -61,7 +61,7 @@ end
 ### has_many
     Class Dog < ActiveRecord::Base
       has_many :ratings   (note plural)
-      has_many :doctors, through :appointments  => not directly connected to doctors
+      has_many :judges, through :ratings  => not directly connected to doctors
     end
 #### makes available:
 - #ratings <<   (shovels ratings into dog's collection of ratings (?) dog.ratings yes?)
